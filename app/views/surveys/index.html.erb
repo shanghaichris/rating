@@ -3,13 +3,13 @@
 
 <% if !@surveys.blank? %>
   <% for survey in @surveys %>
-    <div class="row item">
-		<div class="span10">
-				<h3><%= link_to survey.title,survey_path(survey) %></h3><i> 创建于<%= survey.created_at.to_date %></i>
+    <div class="item">
+		<h3 class="inline"><%= link_to survey.title,survey_path(survey) %></h3><i> 创建于<%= survey.created_at.to_date %></i>
+		<div class="btn-group">
+			<%= link_to edit_survey_path(survey),class: "btn" do %>
+			<i class="icon-edit"></i>修改
+			<% end %>
 		</div>
-    	<div class="span2">
-    		
-    	</div>
     </div>
   <% end %>
 <% else %>
