@@ -1,0 +1,22 @@
+<h3>历次调查一览表</h3>
+<p>这里显示的是我们历次调查的情况</p>
+
+<% if !@surveys.blank? %>
+  <% for survey in @surveys %>
+    <div class="row item">
+		<div class="span10">
+				<h3><%= link_to survey.title,survey_path(survey) %></h3><i> 创建于<%= survey.created_at.to_date %></i>
+		</div>
+    	<div class="span2">
+    		
+    	</div>
+    </div>
+  <% end %>
+<% else %>
+  <div class="empty">
+  	暂时没有调查发生<p/>
+	<%= link_to new_survey_path, class: "btn btn-primary" do %>
+		<i class="icon-plus icon-white"></i>添加新调查
+	<% end %>
+  </div>
+<% end %>

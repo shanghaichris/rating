@@ -1,0 +1,16 @@
+<h3>创建新的调查</h3>
+
+<div class="margin-middle">
+	<%= form_for @survey do |f| %>
+		<%= f.label :title, "调查名称" %>
+		<%= f.text_field :title,class: 'span8' %>
+		<p/>
+		<%= f.label :description, "内容摘要" %>
+		<%= f.text_area :description,{class: 'span8',rows: '5'} %>
+		<p/>
+		<%= f.submit "开始输入题目和选项", class: "btn btn-primary" %>
+	<% end %>
+</div>
+
+
+

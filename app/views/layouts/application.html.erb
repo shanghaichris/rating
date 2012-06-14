@@ -8,7 +8,28 @@
 </head>
 <body>
 	<div class="container">
-	    <%= yield %>
+		<div class="row">
+			<!--main topic-->
+			<div class="span4">
+					<h1>问卷调查统计</h1>
+			</div>
+			<div class="span4 offset4">
+				<div class="btn-group">
+					<%= link_to root_path, class: "btn" do %>
+						<i class="icon-home"></i>返回首页
+					<% end %>
+					
+				</div>
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12 topline margin-middle">
+				<%= yield %>
+			</div>
+			
+		</div>
+	    
 	</div>
 </body>
 </html>

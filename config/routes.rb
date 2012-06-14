@@ -1,5 +1,13 @@
 Rating::Application.routes.draw do
   
+  get "questions/index"
+
+  get "questions/show"
+
+  get "questions/new"
+
+  get "questions/edit"
+
   resources :surveys do
     resources :questions do
       resources :options
@@ -10,7 +18,7 @@ Rating::Application.routes.draw do
     resources :answers
   end
   
-  root :to => 'survey#index'
+  root :to => 'surveys#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
