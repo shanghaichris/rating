@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="span12">
+		<ul class="thumbnails">
+		  <li class="span4">
+			<%= link_to surveys_path,class: "thumbnail" do %>
+				<%= image_tag(asset_path('design.png')) %>
+				<h1 class="text-center margin-middle">设计您的调查问卷</h1>
+		    <% end %>
+		  </li>
+		  <li class="span4">
+			<%= link_to surveys_path,class: "thumbnail" do %>
+				<%= image_tag(asset_path('do_survey.png')) %>
+				<h1 class="text-center margin-middle">填写调查问卷</h1>
+		    <% end %>
+		  </li>
+		  <li class="span4">
+			<%= link_to surveys_path,class: "thumbnail" do %>
+				<%= image_tag(asset_path('report.png')) %>
+				<h1 class="text-center margin-middle">统计分析</h1>
+		    <% end %>
+		  </li>
+		</ul>
+	</div>
+</div>
+<div class="row">
+	<div class="span12">
+		<small>请按照步骤，先行设计好相关问卷调查后，再填写。</small>
+	</div>
+</div>

@@ -2,6 +2,10 @@ class SurveysController < ApplicationController
   layout 'application'
   respond_to :html,:js,:json
   
+  def home
+    
+  end
+  
   def index
     @surveys = Survey.all
   end

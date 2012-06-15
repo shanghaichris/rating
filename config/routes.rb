@@ -14,7 +14,7 @@ Rating::Application.routes.draw do
     resources :answers
   end
   
-  root :to => 'surveys#index'
+  root :to => 'surveys#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
