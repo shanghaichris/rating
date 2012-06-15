@@ -1,3 +1,11 @@
+<% content_for :breadcrumb do %>
+	  <li>
+	  	<%= link_to @survey.title,survey_path(@survey) %><span class="divider">/</span>
+	  </li>
+	  
+	  <li class="active">新建问题</li>
+<% end  %>
+
 <h3>
 	向<%= link_to @survey.title,survey_path(@survey) %>增加问题<p/>
 	<small>(现在<%= link_to @survey.title,survey_path(@survey) %>共有<%= @survey.questions.count %>个问题)</small>
