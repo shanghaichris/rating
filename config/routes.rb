@@ -1,17 +1,13 @@
 Rating::Application.routes.draw do
-  
-  get "questions/index"
-
-  get "questions/show"
-
-  get "questions/new"
-
-  get "questions/edit"
 
   resources :surveys do
     resources :questions do
       resources :options
     end
+  end
+  
+  resources :questions do
+    resources :options
   end
   
   resources :papers do

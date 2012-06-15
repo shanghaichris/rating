@@ -1,13 +1,20 @@
+<% content_for :breadcrumb do %>
+	  <li class="active">调查</li>
+<% end  %>
+
 <h3>历次调查一览表</h3>
 <p>这里显示的是我们历次调查的情况</p>
 
 <% if !@surveys.blank? %>
   <% for survey in @surveys %>
-    <div class="item">
+    <div class="item" id="survey_item_<%= survey.id %>">
 		<h3 class="inline"><%= link_to survey.title,survey_path(survey) %></h3><i> 创建于<%= survey.created_at.to_date %></i>
 		<div class="btn-group">
 			<%= link_to edit_survey_path(survey),class: "btn" do %>
 			<i class="icon-edit"></i>修改
+			<% end %>
+			<%= link_to survey_path(survey),class: "btn", method: :delete,remote: true do %>
+			<i class="icon-remove"></i>删除
 			<% end %>
 		</div>
     </div>

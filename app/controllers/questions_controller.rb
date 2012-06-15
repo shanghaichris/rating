@@ -8,14 +8,31 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @question = @survey.questions.find(params[:id])
+    respond_with @question
   end
 
   def new
-    @questions = @survey.build
-    respond_with @questions
+    @question = @survey.questions.build
+    respond_with @question
+  end
+  
+  def create
+    @question = @survey.questions.build(params[:question])
+    if @question.save
+      redirect_to survey_question_path(@survey,@question)
+    end
   end
 
   def edit
+    @question = @survey.questions.find(params[:id])
+    respond_with @question
+  end
+  
+  def update
+    @question = @survey.questions.find(params[:id])
+    
+    redirect_to [@survey,@question] if @question.update_attributes(params[:question])
   end
   
   private

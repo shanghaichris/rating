@@ -1,2 +1,24 @@
-<h1>Questions#edit</h1>
-<p>Find me in app/views/questions/edit.html.erb</p>
+<% content_for :breadcrumb do %>
+	  <li>
+	  	<%= link_to @survey.title,survey_path(@survey) %><span class="divider">/</span>
+	  </li>
+	  <li>
+	  	<%= link_to @question.subject,survey_question_path(@survey,@question) %><span class="divider">/</span>
+	  </li>
+	  <li class="active">编辑</li>
+<% end  %>
+
+
+<%= form_for [@survey,@question] do |f| %>
+<div class="row">
+	<div class="span6">
+		问题：<%= f.text_field :subject,class: "span5" %>
+	</div>
+	<div class="span1">
+		<%= f.check_box :multi_options %>允许多选
+	</div>
+</div>
+
+	<%= f.submit "更新此问题", class: "btn btn-primary" %>
+
+<% end  %>

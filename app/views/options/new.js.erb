@@ -1,0 +1,7 @@
+<% if @question.options.count==0 %>
+$("#options").html("<%= j(render :partial => 'options/new',:object=> @question) %>");
+<% else %>
+$("#options").append("<%= j(render :partial => 'options/new',:object=> @question) %>");
+<% end %>
+
+$("#btn_add_option").hide();

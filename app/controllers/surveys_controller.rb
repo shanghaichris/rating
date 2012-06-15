@@ -12,7 +12,7 @@ class SurveysController < ApplicationController
   end
   
   def create
-    @survey = Survey.new(params[:survay])
+    @survey = Survey.new(params[:survey])
     if @survey.save
       redirect_to new_survey_question_path(@survey)
     end

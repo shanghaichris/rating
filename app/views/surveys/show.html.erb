@@ -1,2 +1,25 @@
-<h1>Survey#show</h1>
-<p>Find me in app/views/survey/show.html.erb</p>
+<h3>
+	调查：<%= @survey.title %>
+</h3>
+
+<blockquote>
+	<%= @survey.description %>
+</blockquote>
+
+<!--Question List-->
+<%= link_to new_survey_question_path(@survey),class: "btn btn-primary" do %>
+	<i class="icon-plus icon-white"></i>增加新问题
+<% end %>
+
+<% if !@survey.questions.blank? %>
+  <% for q in @survey.questions %>
+    <div class="item">
+    	<%= link_to q.subject,survey_question_path(@survey,q) %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="empty">
+  	还没有题目
+  </div>
+<% end %>
+

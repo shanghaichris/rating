@@ -1,2 +1,36 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+<% content_for :breadcrumb do %>
+	  <li>
+	  	<%= link_to @survey.title,survey_path(@survey) %><span class="divider">/</span>
+	  </li>
+	  <li class="active"><%= @question.subject %></li>
+<% end  %>
+
+
+<h3>
+	<%= @question.subject %>
+</h3>
+<small>
+	<%= link_to edit_survey_question_path(@survey,@question) do %>
+		<i class="icon-edit"></i>编辑这道问题
+	<% end %>
+</small>
+<div id="options">
+
+<% if !@question.options.blank? %>
+<ul>
+  <% for option in @question.options %>
+    <%= render partial: "options/option",object: option %>
+  <% end %>
+</ul>
+<% else %>
+  <div class="empty">
+  	还没有选项
+  </div>
+<% end %>
+
+</div>
+
+<%= link_to new_question_option_path(@question),class: "btn btn-primary",id: "btn_add_option",remote: true do %>
+	<i class="icon-plus icon-white"></i>增加新的选项
+<% end %>
+

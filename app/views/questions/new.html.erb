@@ -1,2 +1,18 @@
-<h1>Questions#new</h1>
-<p>Find me in app/views/questions/new.html.erb</p>
+<h3>
+	向<%= link_to @survey.title,survey_path(@survey) %>增加问题<p/>
+	<small>(现在<%= link_to @survey.title,survey_path(@survey) %>共有<%= @survey.questions.count %>个问题)</small>
+</h3>
+
+<%= form_for [@survey,@question] do |f| %>
+<div class="row">
+	<div class="span6">
+		问题：<%= f.text_field :subject,class: "span5" %>
+	</div>
+	<div class="span1">
+		<%= f.check_box :multi_options %>允许多选
+	</div>
+</div>
+
+	<%= f.submit "保存问题并增加选项", class: "btn btn-primary" %>
+
+<% end  %>
