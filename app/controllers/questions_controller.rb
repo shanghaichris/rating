@@ -35,6 +35,11 @@ class QuestionsController < ApplicationController
     redirect_to [@survey,@question] if @question.update_attributes(params[:question])
   end
   
+  def destroy
+    @question = @survey.questions.find(params[:id])
+    respond_with @question if @question.destroy
+  end
+  
   private
   def get_survey
     @survey = Survey.find(params[:survey_id])
