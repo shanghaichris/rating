@@ -20,7 +20,7 @@
 <% if !@survey.questions.blank? %>
   <% for q in @survey.questions %>
     <div class="item" id="question<%= q.id %>">
-    	<%= link_to q.subject,survey_question_path(@survey,q) %>
+    	<i class="icon-question-sign"></i><%= link_to q.subject,survey_question_path(@survey,q) %>
 		<%= link_to survey_question_path(@survey,q),method: :delete,remote: true,confirm: "真的要删除？" do %>
 			<i class="icon-remove"></i>删除
 		<% end %>

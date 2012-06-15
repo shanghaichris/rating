@@ -1,5 +1,5 @@
 <%= form_for [@question,@option],remote: true do |f| %>	
-	选项：<%= f.text_field :topic,class: "span4"%>
+	<i class="icon-check"></i>新选项：<%= f.text_field :topic,class: "span4"%>
  	<%= f.submit "+",class: "btn",id: "save_add" %>
 	<%#= f.submit "finish", class: "btn",id: "save_back" %>
 <% end %>
