@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613151616) do
+ActiveRecord::Schema.define(:version => 20120616012431) do
 
   create_table "answers", :force => true do |t|
     t.integer  "paper_id"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20120613151616) do
     t.integer  "question_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "blank"
+    t.boolean  "need_blank"
   end
 
   create_table "papers", :force => true do |t|

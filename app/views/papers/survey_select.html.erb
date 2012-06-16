@@ -1,0 +1,16 @@
+<% content_for :breadcrumb do %>
+	<li class="active">选择调查</li>
+<% end  %>
+
+<% if !@surveys.blank? %>
+  <% for survey in @surveys %>
+    <div class="item" id="survey_item_<%= survey.id %>">
+		<h3 class="inline"><%= link_to survey.title,survey_papers_path(survey) %></h3><i> 创建于<%= survey.created_at.to_date %></i><p/>
+		<small>已经有<%= survey.papers.count %>张调查问卷</small>
+    </div>
+  <% end %>
+<% else %>
+  <div class="empty">
+  	暂时没有调查发生<p/>
+  </div>
+<% end %>

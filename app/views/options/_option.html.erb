@@ -1,3 +1,7 @@
 <li id="option<%= option.id %>" class="list_item">
-	<i class="icon-check"></i>选项：<%= option.topic %> <%= link_to [option.question,option],remote: true,method: :delete do %><i class="icon-remove"></i><% end %>
+	<i class="icon-check"></i>选项：<%= option.topic %>
+		<% if option.need_blank %>
+		<%= text_field_tag :blank,"" %>
+		<% end %>
+	 <%= link_to [option.question,option],remote: true,method: :delete do %><i class="icon-remove"></i><% end %>
 </li>

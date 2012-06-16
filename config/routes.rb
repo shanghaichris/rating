@@ -1,8 +1,13 @@
 Rating::Application.routes.draw do
 
+  match 'surveys/select'=>'papers#survey_select',as: :survey_select
+  
   resources :surveys do
     resources :questions do
       resources :options
+    end
+    resources :papers do
+      resources :answers
     end
   end
   

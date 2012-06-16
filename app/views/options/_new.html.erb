@@ -1,5 +1,6 @@
 <%= form_for [@question,@option],remote: true do |f| %>	
 	<i class="icon-check"></i>新选项：<%= f.text_field :topic,class: "span4"%>
+     <%= f.check_box :need_blank %>其他填空选项
  	<%= f.submit "+",class: "btn",id: "save_add" %>
 	<%#= f.submit "finish", class: "btn",id: "save_back" %>
 <% end %>
